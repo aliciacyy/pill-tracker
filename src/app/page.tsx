@@ -102,10 +102,10 @@ export default function Home() {
   return (
     <main className={`min-h-screen px-8 py-8 text-center ${inter.className}`}>
       <h1 className='text-2xl mb-4 font-bold'>Pill Tracker</h1>
-      <h2 className='text-l mb-8'>Today's date: {date}</h2>
+      <h2 className='text-l mb-8'>Today&apos;s date: {date}</h2>
       <div className='flex gap-4 justify-center'>
-        {generate().map((table) => (
-          <table key={useId()}>
+        {generate().map((table, idx) => (
+          <table key={idx}>
             <tbody>{table}</tbody>
           </table>
         ))}
