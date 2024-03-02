@@ -1,4 +1,8 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {};
+const nextConfig = {
+  basePath: '/pill-tracker',
+  output: 'export', // <=== enables static exports
+  reactStrictMode: false,
+};
 
 export default nextConfig;
