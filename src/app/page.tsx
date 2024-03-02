@@ -1,6 +1,3 @@
-'use client';
-
-import { useId } from 'react';
 import { Figtree } from 'next/font/google';
 
 const inter = Figtree({ weight: '400', subsets: ['latin'] });
