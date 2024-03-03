@@ -4,8 +4,7 @@ const inter = Figtree({ weight: '400', subsets: ['latin'] });
 export default function Home() {
   
   const today = new Date();
-  const userTimezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
-  const date = today.toLocaleDateString('en-UK', { timeZone: userTimezone });
+  const date = today.toLocaleDateString('en-UK', { timeZone: 'Asia/Singapore' });
   
   const numRows = 5;
   const numCols = 2;
@@ -15,7 +14,7 @@ export default function Home() {
   // Calculate the difference in milliseconds
   const differenceInMilliseconds = Math.abs(today.getTime() - startDate.getTime());
   // Convert milliseconds to days
-  const differenceInDays = Math.ceil(differenceInMilliseconds / (1000 * 60 * 60 * 24)) - 1;
+  const differenceInDays = Math.floor(differenceInMilliseconds / (1000 * 60 * 60 * 24)) - 1;
   const pillsEaten = (differenceInDays * 3) + 1;
   let pillsRemaining = 10 - (pillsEaten % 10);
   if (pillsEaten <= 10) {
