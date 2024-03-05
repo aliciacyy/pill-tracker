@@ -2,21 +2,24 @@ import { Figtree } from 'next/font/google';
 
 const inter = Figtree({ weight: '400', subsets: ['latin'] });
 export default function Home() {
-  
-  const today = new Date();
-  today.setHours(0,0,0,0);
-  const date = today.toLocaleDateString('en-UK', { timeZone: 'Asia/Singapore' });
-  
+  const dayjs = require('dayjs');
+
+  // const today = new Date();
+  //today.setHours(0,0,0,0);
+  // const date = today.toLocaleDateString('en-UK', { timeZone: 'Asia/Singapore' });
+  const today = dayjs();
+  const date = today.format('DD/MM/YYYY');
+
   const numRows = 5;
   const numCols = 2;
 
-  const startDate = new Date('2024-02-27');
-  startDate.setHours(0,0,0,0);
+  const startDate = new Date('2024-02-28');
   // const endDate = new Date('2024-03-06');
   // Calculate the difference in milliseconds
-  const differenceInMilliseconds = Math.abs(today.getTime() - startDate.getTime());
+  const differenceInMilliseconds = Math.abs(today.toDate() - startDate.getTime());
+
   // Convert milliseconds to days
-  const differenceInDays = Math.ceil(differenceInMilliseconds / (1000 * 60 * 60 * 24)) - 1;
+  const differenceInDays = Math.floor(differenceInMilliseconds / (1000 * 60 * 60 * 24));
   const pillsEaten = (differenceInDays * 3) + 1;
   let pillsRemaining = 10 - (pillsEaten % 10);
   if (pillsEaten <= 10) {
