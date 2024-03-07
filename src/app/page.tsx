@@ -8,7 +8,7 @@ export default function Home() {
   //today.setHours(0,0,0,0);
   // const date = today.toLocaleDateString('en-UK', { timeZone: 'Asia/Singapore' });
   const today = dayjs();
-  const date = today.format('DD/MM/YYYY');
+  const date = today.format('DD/MM/YYYY HH:mm:ss');
 
   const numRows = 5;
   const numCols = 2;
