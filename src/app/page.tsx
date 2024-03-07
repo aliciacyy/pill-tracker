@@ -1,5 +1,6 @@
 import { Figtree } from 'next/font/google';
 
+export const dynamic = 'force-dynamic';
 const inter = Figtree({ weight: '400', subsets: ['latin'] });
 export default function Home() {
   const dayjs = require('dayjs');
